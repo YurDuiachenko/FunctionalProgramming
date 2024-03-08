@@ -9,17 +9,14 @@ fun main() {
     if (setOf(a, b, c).size != 3)
         print("Ошибка")
 
-    // среднее
-    println(listOf(a, b, c).average())
-
     print(
         when {
-            (c in (a + 1)..<b) -> a
-            (b in (a + 1)..<c) -> a
-            (c in (b + 1)..<a) -> b
-            (a in (b + 1)..<c) -> b
-            (b in (c + 1)..<a) -> c
-            (a in (c + 1)..<b) -> c
+            (c in (a + 1)..<b) -> c
+            (b in (a + 1)..<c) -> b
+            (c in (b + 1)..<a) -> c
+            (a in (b + 1)..<c) -> a
+            (b in (c + 1)..<a) -> b
+            (a in (c + 1)..<b) -> a
             else -> ""
         }
     )
