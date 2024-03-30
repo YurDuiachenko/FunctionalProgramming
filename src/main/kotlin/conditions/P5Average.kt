@@ -1,23 +1,37 @@
 package conditions
 
 fun main() {
-    val a = (0..100).random()
-    val b = (0..100).random()
-    val c = (0..100).random()
-    println(listOf(a, b, c).joinToString(" "))
+    val a = readln()
+    val b = readln()
+    val c = readln()
 
-    if (setOf(a, b, c).size != 3)
-        print("Ошибка")
-
-    print(
-        when {
-            (c in (a + 1)..<b) -> c
-            (b in (a + 1)..<c) -> b
-            (c in (b + 1)..<a) -> c
-            (a in (b + 1)..<c) -> a
-            (b in (c + 1)..<a) -> b
-            (a in (c + 1)..<b) -> a
-            else -> ""
+    when (setOf(a, b, c).size) {
+        1 -> print("Ошибка")
+        2 -> {
+            print(
+                when {
+                    (c in (a)..<b + 1) -> a
+                    (b in (a)..<c + 1) -> a
+                    (c in (b)..<a + 1) -> b
+                    (a in (b)..<c + 1) -> b
+                    (b in (c)..<a + 1) -> c
+                    (a in (c)..<b + 1) -> c
+                    else -> "Error"
+                }
+            )
         }
-    )
+        else -> {
+            print(
+                when {
+                    (c in (a)..<b + 1) -> c
+                    (b in (a)..<c + 1) -> b
+                    (c in (b)..<a + 1) -> c
+                    (a in (b)..<c + 1) -> a
+                    (b in (c)..<a + 1) -> b
+                    (a in (c)..<b + 1) -> a
+                    else -> "Error"
+                }
+            )
+        }
+    }
 }

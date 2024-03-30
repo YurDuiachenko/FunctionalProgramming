@@ -1,7 +1,7 @@
 package conditions
 
 fun main() {
-    var age = readln().toInt()
+    val age = readln().toInt()
     if (age > 18) {
         println("Вам уже все можно")
     } else if (age == 18) {

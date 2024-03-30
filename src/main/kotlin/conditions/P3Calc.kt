@@ -1,7 +1,9 @@
 package conditions
 
+import wres.Error
+
 fun main() {
-    print(
+    println(
         """
         У вас есть числа: 2 и 6
         1. Добавить
@@ -18,7 +20,7 @@ fun main() {
             1 -> a + b
             2 -> a - b
             0 -> ""
-            else -> ""
+            else -> Error.kyky
         }
     )
 }
