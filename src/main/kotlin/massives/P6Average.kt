@@ -6,7 +6,7 @@ fun main() {
         .toList()
         .let {
             it.filter { el ->
-                el > (it.sum() / it.size)
+                el > (it.sum().toDouble() / it.size.toDouble())
             }
         }
     )
