@@ -1,7 +1,11 @@
 package functions
 
+import java.util.Locale
+fun applyDiscount(price: Double, discount: Double): String {
+    return "%.2f".format(Locale.ENGLISH, price.times((100 - discount) / 100.0))
+}
+
 fun main() {
-    val list = ArrayList<Int>()
-    list.addAll(setOf(24, -63, 67, -12, 88, 94, -28, 82, 0, 53))
-    print("${list.min()} ${list.max()}")
+    println(applyDiscount(35.98, 40.0))
+    println(applyDiscount(100.00, 24.5789))
 }

@@ -1,11 +1,14 @@
 package functions
 
+fun split(str: String): Int {
+    return str.split(" ")
+        .asSequence()
+        .filter { it.isNotBlank() }
+        .filter { Character.isAlphabetic(it.first().code)  }
+        .map { it.trim()}
+        .toList().count()
+}
+
 fun main() {
-    val list = ArrayList<Int>(readln().split(" ").map { it.toInt() }.toList())
-    print(
-        list.min().let {
-            list.remove(it)
-            list.min()
-        }
-    )
+    println(split(readln()))
 }
